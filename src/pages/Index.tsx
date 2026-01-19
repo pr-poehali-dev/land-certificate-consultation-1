@@ -112,8 +112,40 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4">Наши услуги</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-            Комплексное сопровождение процесса получения средств под земельный сертификат
+            Комплексное сопровождение процесса получения средств по программам государственной поддержки многодетных семей
           </p>
+          
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group">
+              <CardContent className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 relative">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
+                <div className="relative">
+                  <div className="bg-primary text-primary-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <Icon name="MapPin" size={40} />
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-3 text-primary">Земельный сертификат</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Получите средства на покупку земельного участка или строительство дома
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-4 border-accent/20 hover:border-accent/40 transition-all hover:scale-105 duration-300 overflow-hidden group">
+              <CardContent className="p-10 bg-gradient-to-br from-accent/5 to-accent/10 relative">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
+                <div className="relative">
+                  <div className="bg-accent text-accent-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <Icon name="Baby" size={40} />
+                  </div>
+                  <h3 className="text-3xl font-extrabold mb-3 text-accent">Региональный материнский капитал</h3>
+                  <p className="text-muted-foreground text-lg leading-relaxed">
+                    Реализация регионального маткапитала на улучшение жилищных условий
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
