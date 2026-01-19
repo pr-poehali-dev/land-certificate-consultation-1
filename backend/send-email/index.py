@@ -54,12 +54,12 @@ def handler(event: dict, context) -> dict:
         msg = MIMEMultipart()
         msg['From'] = smtp_user
         msg['To'] = recipient_email
-        msg['Subject'] = f'Новая заявка от {name}'
+        msg['Subject'] = f'Новая заявка с сайта "Земельный сертификат" от {name}'
         
         html_body = f'''
         <html>
             <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-                <h2 style="color: #2563eb;">Новая заявка с сайта</h2>
+                <h2 style="color: #2563eb;">Новая заявка с сайта "Земельный сертификат"</h2>
                 <p><strong>Имя:</strong> {name}</p>
                 <p><strong>Телефон:</strong> {phone}</p>
                 <p><strong>Сообщение:</strong></p>
