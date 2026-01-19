@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import InputMask from 'react-input-mask';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -19,12 +20,25 @@ const Index = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
+    email: '',
     message: '',
   });
+  const [emailError, setEmailError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!validateEmail(formData.email)) {
+      setEmailError('Введите корректный email');
+      return;
+    }
+    setEmailError('');
     setIsSubmitting(true);
 
     try {
@@ -429,7 +443,9 @@ const Index = () => {
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
-                    <label className="block text-sm font-semibold mb-2">Ваше имя</label>
+                    <label className="block text-sm font-semibold mb-2">
+                      Ваше имя <span className="text-red-500">*</span>
+                    </label>
                     <Input
                       placeholder="Иван Иванов"
                       value={formData.name}
@@ -439,15 +455,43 @@ const Index = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold mb-2">Телефон</label>
-                    <Input
-                      type="tel"
-                      placeholder="+7 (999) 123-45-67"
+                    <label className="block text-sm font-semibold mb-2">
+                      Телефон <span className="text-red-500">*</span>
+                    </label>
+                    <InputMask
+                      mask="+7 (999) 999-99-99"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       required
-                      className="h-12"
+                    >
+                      {(inputProps: any) => (
+                        <Input
+                          {...inputProps}
+                          type="tel"
+                          placeholder="+7 (999) 999-99-99"
+                          className="h-12"
+                        />
+                      )}
+                    </InputMask>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold mb-2">
+                      Email <span className="text-red-500">*</span>
+                    </label>
+                    <Input
+                      type="email"
+                      placeholder="example@mail.ru"
+                      value={formData.email}
+                      onChange={(e) => {
+                        setFormData({ ...formData, email: e.target.value });
+                        if (emailError) setEmailError('');
+                      }}
+                      required
+                      className={`h-12 ${emailError ? 'border-red-500' : ''}`}
                     />
+                    {emailError && (
+                      <p className="text-red-500 text-sm mt-1">{emailError}</p>
+                    )}
                   </div>
                   <div>
                     <label className="block text-sm font-semibold mb-2">Сообщение</label>
