@@ -8,21 +8,21 @@ const Success = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary/5 to-accent/5 flex items-center justify-center px-4">
-      <Card className="max-w-2xl w-full border-2 shadow-xl">
+      <Card className="max-w-2xl w-full border-2 shadow-xl animate-scale-in">
         <CardContent className="p-12 text-center">
-          <div className="bg-green-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6">
+          <div className="bg-green-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 animate-scale-in animation-delay-100">
             <Icon name="CheckCircle" className="text-green-600" size={56} />
           </div>
           
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">
+          <h1 className="text-4xl font-bold mb-4 text-gray-900 animate-fade-in-up animation-delay-200">
             Заявка успешно отправлена!
           </h1>
           
-          <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed animate-fade-in-up animation-delay-300">
             Наш специалист свяжется с вами в ближайшее время для консультации
           </p>
 
-          <div className="bg-primary/5 rounded-xl p-6 mb-8">
+          <div className="bg-primary/5 rounded-xl p-6 mb-8 animate-fade-in animation-delay-400">
             <div className="flex items-center justify-center gap-3 mb-3">
               <Icon name="Clock" className="text-primary" size={24} />
               <p className="font-semibold text-lg">Обычно отвечаем в течение 15 минут</p>
@@ -32,7 +32,7 @@ const Success = () => {
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-500">
             <Button 
               size="lg" 
               onClick={() => navigate('/')}
@@ -53,7 +53,7 @@ const Success = () => {
             </Button>
           </div>
 
-          <div className="mt-8 pt-8 border-t">
+          <div className="mt-8 pt-8 border-t animate-fade-in animation-delay-600">
             <p className="text-sm text-muted-foreground mb-4">
               Если у вас срочный вопрос, свяжитесь с нами напрямую:
             </p>

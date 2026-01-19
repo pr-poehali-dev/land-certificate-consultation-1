@@ -139,13 +139,13 @@ const Index = () => {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Наши услуги</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Наши услуги</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
             Комплексное сопровождение процесса получения средств по программам государственной поддержки многодетных семей
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group">
+            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-left animation-delay-200">
               <CardContent className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 relative">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
                 <div className="relative">
@@ -160,7 +160,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-4 border-accent/20 hover:border-accent/40 transition-all hover:scale-105 duration-300 overflow-hidden group">
+            <Card className="border-4 border-accent/20 hover:border-accent/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-right animation-delay-200">
               <CardContent className="p-10 bg-gradient-to-br from-accent/5 to-accent/10 relative">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
                 <div className="relative">
@@ -211,7 +211,8 @@ const Index = () => {
             ].map((service, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow border-2 hover:border-primary/20"
+                className="hover:shadow-lg transition-shadow border-2 hover:border-primary/20 animate-fade-in-up"
+                style={{ animationDelay: `${0.3 + index * 0.1}s`, opacity: 0 }}
               >
                 <CardContent className="p-6">
                   <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
@@ -229,12 +230,12 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4">Почему выбирают нас</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
+            <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Почему выбирают нас</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg animate-fade-in-up animation-delay-100">
               Эксперт Финанс — лидер в реализации программ государственной поддержки
             </p>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-2">
+              <Card className="border-2 animate-scale-in animation-delay-200">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground p-3 rounded-xl">
@@ -264,7 +265,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className="border-2 animate-scale-in animation-delay-400">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="bg-primary text-primary-foreground p-3 rounded-xl">
@@ -280,7 +281,7 @@ const Index = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className="border-2 animate-scale-in animation-delay-500">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
                     <div className="bg-accent text-accent-foreground p-3 rounded-xl">
@@ -300,8 +301,8 @@ const Index = () => {
 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-4">Отзывы клиентов</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
+          <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Отзывы клиентов</h2>
+          <p className="text-center text-muted-foreground mb-12 text-lg animate-fade-in-up animation-delay-100">
             Истории успеха наших клиентов
           </p>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -325,7 +326,7 @@ const Index = () => {
                 rating: 5,
               },
             ].map((review, index) => (
-              <Card key={index} className="border-2 hover:shadow-lg transition-shadow">
+              <Card key={index} className="border-2 hover:shadow-lg transition-shadow animate-fade-in-up" style={{ animationDelay: `${0.2 + index * 0.15}s`, opacity: 0 }}>
                 <CardContent className="p-6">
                   <div className="flex gap-1 mb-4">
                     {[...Array(review.rating)].map((_, i) => (
@@ -352,11 +353,11 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-4">Часто задаваемые вопросы</h2>
-            <p className="text-center text-muted-foreground mb-12 text-lg">
+            <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Часто задаваемые вопросы</h2>
+            <p className="text-center text-muted-foreground mb-12 text-lg animate-fade-in-up animation-delay-100">
               Ответы на популярные вопросы о земельных сертификатах
             </p>
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4 animate-fade-in animation-delay-200">
               <AccordionItem value="item-1" className="bg-white rounded-lg border-2 px-6">
                 <AccordionTrigger className="text-left hover:no-underline">
                   <span className="font-semibold">Что такое земельный сертификат?</span>
@@ -418,8 +419,8 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Оставьте заявку</h2>
-              <p className="text-muted-foreground text-lg">
+              <h2 className="text-4xl font-bold mb-4 animate-fade-in-up">Оставьте заявку</h2>
+              <p className="text-muted-foreground text-lg animate-fade-in-up animation-delay-100">
                 Мы свяжемся с вами в течение 15 минут и ответим на все вопросы
               </p>
             </div>
@@ -466,7 +467,7 @@ const Index = () => {
               </CardContent>
             </Card>
 
-            <div className="mt-12 grid md:grid-cols-2 gap-6">
+            <div className="mt-12 grid md:grid-cols-2 gap-6 animate-fade-in animation-delay-300">
               <Card className="border-2">
                 <CardContent className="p-6 flex items-center gap-4">
                   <div className="bg-primary/10 p-3 rounded-xl">
