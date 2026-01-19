@@ -1,0 +1,27 @@
+{
+  "tests": [
+    {
+      "name": "Send email with valid data",
+      "method": "POST",
+      "body": {
+        "name": "Тест Тестов",
+        "phone": "+7 999 123-45-67",
+        "message": "Тестовое сообщение"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing required fields",
+      "method": "POST",
+      "body": {
+        "message": "Только сообщение"
+      },
+      "expectedStatus": 400,
+      "bodyMatcher": "partial"
+    }
+  ]
+}
