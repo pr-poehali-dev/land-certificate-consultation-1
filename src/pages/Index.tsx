@@ -443,7 +443,7 @@ const Index = () => {
               </p>
             </div>
 
-            <Card className="border-2">
+            <Card className="border-2" id="contact-form">
               <CardContent className="p-8">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
