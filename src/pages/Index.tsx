@@ -102,7 +102,11 @@ const Index = () => {
                 сертификат с помощью профессионалов
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button size="lg" className="text-lg px-8 gap-2">
+                <Button 
+                  size="lg" 
+                  className="text-lg px-8 gap-2"
+                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
                   <Icon name="MessageCircle" size={20} />
                   Получить консультацию
                 </Button>
