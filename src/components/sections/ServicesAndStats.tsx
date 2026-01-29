@@ -118,10 +118,10 @@ const ServicesAndStats = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 hover:border-accent/40 transition-all hover:shadow-lg">
+              <Card className="border-2 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent text-accent-foreground p-3 rounded-xl shadow-md">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-xl shadow-lg shadow-primary/30">
                       <Icon name="Users" size={28} />
                     </div>
                     <div>
@@ -148,10 +148,10 @@ const ServicesAndStats = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 animate-scale-in animation-delay-500 hover:border-accent/40 transition-all hover:shadow-lg">
+              <Card className="border-2 animate-scale-in animation-delay-500 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent text-accent-foreground p-3 rounded-xl shadow-md">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-xl shadow-lg shadow-primary/30">
                       <Icon name="CheckCircle" size={28} />
                     </div>
                     <div>
