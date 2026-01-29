@@ -27,14 +27,14 @@ const ServicesAndStats = () => {
               </CardContent>
             </Card>
 
-            <Card className="border-4 border-accent/20 hover:border-accent/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-right animation-delay-200">
-              <CardContent className="p-10 bg-gradient-to-br from-accent/5 to-accent/10 relative">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-accent/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
+            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-right animation-delay-200 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20">
+              <CardContent className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 relative">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
                 <div className="relative">
-                  <div className="bg-accent text-accent-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <div className="bg-primary text-primary-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:rotate-12 transition-transform duration-300 ring-2 ring-primary/20">
                     <Icon name="Baby" size={40} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-3 text-accent">Региональный материнский капитал</h3>
+                  <h3 className="text-3xl font-extrabold mb-3 text-primary drop-shadow-[0_2px_6px_rgba(50,205,50,0.3)]">Региональный материнский капитал</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     Реализация регионального маткапитала на улучшение жилищных условий
                   </p>
