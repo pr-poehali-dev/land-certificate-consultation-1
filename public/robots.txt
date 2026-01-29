@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://land-certificate-consultation-1.poehali.app/sitemap.xml

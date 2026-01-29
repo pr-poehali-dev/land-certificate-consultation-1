@@ -74,7 +74,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+      <header className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" role="banner">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="BadgeCheck" className="text-primary" size={32} />
@@ -93,7 +93,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+              <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight" itemProp="headline">
                 Реализуйте земельный сертификат{' '}
                 <span className="text-primary">легко и быстро</span>
               </h1>
@@ -155,7 +155,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="services">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Наши услуги</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto animate-fade-in-up animation-delay-100">
@@ -245,7 +245,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5" id="about">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Почему выбирают нас</h2>
@@ -317,7 +317,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-white" id="reviews">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Отзывы клиентов</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg animate-fade-in-up animation-delay-100">
@@ -368,7 +368,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/5" id="faq">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-4 animate-fade-in-up">Часто задаваемые вопросы</h2>
@@ -551,14 +551,14 @@ const Index = () => {
         </div>
       </section>
 
-      <footer className="bg-primary text-primary-foreground py-12">
+      <footer className="bg-primary text-primary-foreground py-12" role="contentinfo" itemScope itemType="https://schema.org/Organization">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Icon name="BadgeCheck" size={32} />
-              <span className="text-2xl font-bold">Эксперт Финанс</span>
+              <span className="text-2xl font-bold" itemProp="name">Эксперт Финанс</span>
             </div>
-            <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto">
+            <p className="text-primary-foreground/80 mb-6 max-w-2xl mx-auto" itemProp="description">
               Профессиональная помощь в реализации земельных сертификатов и программ
               государственной поддержки
             </p>
