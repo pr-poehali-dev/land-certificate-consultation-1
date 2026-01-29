@@ -38,7 +38,7 @@ const CookieNotice = () => {
           </div>
           <Button 
             onClick={handleAccept}
-            className="shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 whitespace-nowrap"
+            className="bg-gradient-to-r from-[hsl(145,70%,35%)] via-primary to-[hsl(145,60%,55%)] hover:from-[hsl(145,70%,32%)] hover:via-[hsl(145,63%,39%)] hover:to-[hsl(145,60%,52%)] shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 whitespace-nowrap"
           >
             <Icon name="Check" size={18} className="mr-2" />
             Принять

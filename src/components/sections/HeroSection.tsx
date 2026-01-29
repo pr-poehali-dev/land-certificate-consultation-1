@@ -18,7 +18,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="text-lg px-8 gap-2 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
+                className="text-lg px-8 gap-2 bg-gradient-to-r from-[hsl(145,70%,35%)] via-primary to-[hsl(145,60%,55%)] hover:from-[hsl(145,70%,32%)] hover:via-[hsl(145,63%,39%)] hover:to-[hsl(145,60%,52%)] shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Icon name="MessageCircle" size={20} />
@@ -33,7 +33,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="relative animate-scale-in">
-            <div className="bg-gradient-to-br from-primary to-accent rounded-3xl p-8 text-white shadow-2xl shadow-primary/20 ring-4 ring-primary/10">
+            <div className="bg-gradient-to-br from-[hsl(145,70%,35%)] via-primary to-[hsl(145,60%,55%)] rounded-3xl p-8 text-white shadow-2xl shadow-primary/20 ring-4 ring-primary/10">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-white/20 p-3 rounded-xl">

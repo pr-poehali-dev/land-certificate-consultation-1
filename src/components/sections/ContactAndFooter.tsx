@@ -201,7 +201,7 @@ const ContactAndFooter = () => {
                       className="resize-none"
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full text-lg gap-2 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105" disabled={isSubmitting}>
+                  <Button type="submit" size="lg" className="w-full text-lg gap-2 bg-gradient-to-r from-[hsl(145,70%,35%)] via-primary to-[hsl(145,60%,55%)] hover:from-[hsl(145,70%,32%)] hover:via-[hsl(145,63%,39%)] hover:to-[hsl(145,60%,52%)] shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105" disabled={isSubmitting}>
                     <Icon name="Send" size={20} />
                     {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                   </Button>
