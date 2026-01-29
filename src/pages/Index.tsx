@@ -2,6 +2,7 @@ import Header from '@/components/sections/Header';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesAndStats from '@/components/sections/ServicesAndStats';
 import ContactAndFooter from '@/components/sections/ContactAndFooter';
+import CookieNotice from '@/components/CookieNotice';
 
 const Index = () => {
   return (
@@ -10,6 +11,7 @@ const Index = () => {
       <HeroSection />
       <ServicesAndStats />
       <ContactAndFooter />
+      <CookieNotice />
     </div>
   );
 };
