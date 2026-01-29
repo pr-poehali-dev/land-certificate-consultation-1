@@ -12,14 +12,14 @@ const ServicesAndStats = () => {
           </p>
           
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
-            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-left animation-delay-200">
+            <Card className="border-4 border-primary/20 hover:border-primary/40 transition-all hover:scale-105 duration-300 overflow-hidden group animate-slide-in-left animation-delay-200 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20">
               <CardContent className="p-10 bg-gradient-to-br from-primary/5 to-primary/10 relative">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-500" />
                 <div className="relative">
-                  <div className="bg-primary text-primary-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                  <div className="bg-primary text-primary-foreground w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:rotate-12 transition-transform duration-300 ring-2 ring-primary/20">
                     <Icon name="MapPin" size={40} />
                   </div>
-                  <h3 className="text-3xl font-extrabold mb-3 text-primary">Земельный сертификат</h3>
+                  <h3 className="text-3xl font-extrabold mb-3 text-primary drop-shadow-[0_2px_6px_rgba(50,205,50,0.3)]">Земельный сертификат</h3>
                   <p className="text-muted-foreground text-lg leading-relaxed">
                     Получите средства на покупку жилой недвижимости или строительство дома
                   </p>
@@ -78,12 +78,12 @@ const ServicesAndStats = () => {
             ].map((service, index) => (
               <Card
                 key={index}
-                className="hover:shadow-lg transition-shadow border-2 hover:border-primary/20 animate-fade-in-up"
+                className="hover:shadow-lg hover:shadow-primary/10 transition-all border-2 hover:border-primary/30 animate-fade-in-up hover:scale-105 duration-300"
                 style={{ animationDelay: `${0.3 + index * 0.1}s`, opacity: 0 }}
               >
                 <CardContent className="p-6">
-                  <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon name={service.icon} className="text-primary" size={32} />
+                  <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mb-4 shadow-md shadow-primary/20">
+                    <Icon name={service.icon} className="text-primary drop-shadow-[0_2px_4px_rgba(50,205,50,0.3)]" size={32} />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground leading-relaxed">{service.description}</p>
@@ -102,10 +102,10 @@ const ServicesAndStats = () => {
               Эксперт Финанс — лидер в реализации программ государственной поддержки
             </p>
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="border-2 animate-scale-in animation-delay-200">
+              <Card className="border-2 animate-scale-in animation-delay-200 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground p-3 rounded-xl">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-xl shadow-lg shadow-primary/30">
                       <Icon name="Award" size={28} />
                     </div>
                     <div>
@@ -118,10 +118,10 @@ const ServicesAndStats = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className="border-2 hover:border-accent/40 transition-all hover:shadow-lg">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent text-accent-foreground p-3 rounded-xl">
+                    <div className="bg-accent text-accent-foreground p-3 rounded-xl shadow-md">
                       <Icon name="Users" size={28} />
                     </div>
                     <div>
@@ -132,10 +132,10 @@ const ServicesAndStats = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 animate-scale-in animation-delay-400">
+              <Card className="border-2 animate-scale-in animation-delay-400 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-primary text-primary-foreground p-3 rounded-xl">
+                    <div className="bg-primary text-primary-foreground p-3 rounded-xl shadow-lg shadow-primary/30">
                       <Icon name="Heart" size={28} />
                     </div>
                     <div>
@@ -148,10 +148,10 @@ const ServicesAndStats = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 animate-scale-in animation-delay-500">
+              <Card className="border-2 animate-scale-in animation-delay-500 hover:border-accent/40 transition-all hover:shadow-lg">
                 <CardContent className="p-8">
                   <div className="flex items-start gap-4">
-                    <div className="bg-accent text-accent-foreground p-3 rounded-xl">
+                    <div className="bg-accent text-accent-foreground p-3 rounded-xl shadow-md">
                       <Icon name="CheckCircle" size={28} />
                     </div>
                     <div>

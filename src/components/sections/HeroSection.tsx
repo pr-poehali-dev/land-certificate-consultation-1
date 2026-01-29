@@ -9,7 +9,7 @@ const HeroSection = () => {
           <div className="animate-fade-in">
             <h1 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight" itemProp="headline">
               Реализуйте земельный сертификат{' '}
-              <span className="text-primary">легко и быстро</span>
+              <span className="text-primary drop-shadow-[0_2px_8px_rgba(50,205,50,0.4)]">легко и быстро</span>
             </h1>
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               Получите средства на покупку или строительство недвижимости под земельный
@@ -18,14 +18,14 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4">
               <Button 
                 size="lg" 
-                className="text-lg px-8 gap-2"
+                className="text-lg px-8 gap-2 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105"
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Icon name="MessageCircle" size={20} />
                 Получить консультацию
               </Button>
               <a href="tel:88007008909">
-                <Button size="lg" variant="outline" className="text-lg px-8 gap-2">
+                <Button size="lg" variant="outline" className="text-lg px-8 gap-2 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300">
                   <Icon name="Phone" size={20} />
                   Позвонить
                 </Button>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             </div>
           </div>
           <div className="relative animate-scale-in">
-            <div className="bg-gradient-to-br from-primary to-accent rounded-3xl p-8 text-white shadow-2xl">
+            <div className="bg-gradient-to-br from-primary to-accent rounded-3xl p-8 text-white shadow-2xl shadow-primary/20 ring-4 ring-primary/10">
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="bg-white/20 p-3 rounded-xl">

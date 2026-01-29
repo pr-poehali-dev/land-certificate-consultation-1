@@ -201,7 +201,7 @@ const ContactAndFooter = () => {
                       className="resize-none"
                     />
                   </div>
-                  <Button type="submit" size="lg" className="w-full text-lg gap-2" disabled={isSubmitting}>
+                  <Button type="submit" size="lg" className="w-full text-lg gap-2 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-105" disabled={isSubmitting}>
                     <Icon name="Send" size={20} />
                     {isSubmitting ? 'Отправка...' : 'Отправить заявку'}
                   </Button>
@@ -210,30 +210,30 @@ const ContactAndFooter = () => {
             </Card>
 
             <div className="mt-12 grid md:grid-cols-2 gap-6 animate-fade-in animation-delay-300">
-              <Card className="border-2">
+              <Card className="border-2 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-6 flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-xl">
-                    <Icon name="Phone" className="text-primary" size={24} />
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-md shadow-primary/20">
+                    <Icon name="Phone" className="text-primary drop-shadow-[0_2px_4px_rgba(50,205,50,0.3)]" size={24} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Телефон</p>
-                    <a href="tel:88007008909" className="font-bold text-lg hover:text-primary">
+                    <a href="tel:88007008909" className="font-bold text-lg hover:text-primary transition-colors">
                       8 (800) 700-89-09
                     </a>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
+              <Card className="border-2 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/10">
                 <CardContent className="p-6 flex items-center gap-4">
-                  <div className="bg-primary/10 p-3 rounded-xl">
-                    <Icon name="Mail" className="text-primary" size={24} />
+                  <div className="bg-primary/10 p-3 rounded-xl shadow-md shadow-primary/20">
+                    <Icon name="Mail" className="text-primary drop-shadow-[0_2px_4px_rgba(50,205,50,0.3)]" size={24} />
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground mb-1">Email</p>
                     <a
                       href="mailto:info@sll-expert.ru"
-                      className="font-bold text-lg hover:text-primary"
+                      className="font-bold text-lg hover:text-primary transition-colors"
                     >
                       info@sll-expert.ru
                     </a>
