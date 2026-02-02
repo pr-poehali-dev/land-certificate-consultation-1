@@ -20,25 +20,12 @@ const ContactAndFooter = () => {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
-    email: '',
     message: '',
   });
-  const [emailError, setEmailError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const validateEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!validateEmail(formData.email)) {
-      setEmailError('Введите корректный email');
-      return;
-    }
-    setEmailError('');
     setIsSubmitting(true);
 
     try {
@@ -172,25 +159,7 @@ const ContactAndFooter = () => {
                       )}
                     </InputMask>
                   </div>
-                  <div>
-                    <label className="block text-sm font-semibold mb-2">
-                      Email <span className="text-red-500">*</span>
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder="example@mail.ru"
-                      value={formData.email}
-                      onChange={(e) => {
-                        setFormData({ ...formData, email: e.target.value });
-                        if (emailError) setEmailError('');
-                      }}
-                      required
-                      className={`h-12 ${emailError ? 'border-red-500' : ''}`}
-                    />
-                    {emailError && (
-                      <p className="text-red-500 text-sm mt-1">{emailError}</p>
-                    )}
-                  </div>
+
                   <div>
                     <label className="block text-sm font-semibold mb-2">Сообщение</label>
                     <Textarea
