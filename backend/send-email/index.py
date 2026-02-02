@@ -87,7 +87,7 @@ def handler(event: dict, context) -> dict:
         msg = MIMEMultipart()
         msg['From'] = smtp_user
         msg['To'] = recipient_email
-        msg['Subject'] = f'Новая заявка #{application_id} - {name}'
+        msg['Subject'] = f'Новая заявка с сайта "Земельный сертификат" #{application_id} - {name}'
         
         html_body = f'''
         <html>
