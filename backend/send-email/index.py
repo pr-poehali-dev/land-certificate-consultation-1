@@ -37,6 +37,13 @@ def handler(event: dict, context) -> dict:
         phone = body.get('phone', '')
         message = body.get('message', '')
         
+        # Получение UTM-меток
+        utm_source = body.get('utm_source', '')
+        utm_medium = body.get('utm_medium', '')
+        utm_campaign = body.get('utm_campaign', '')
+        utm_term = body.get('utm_term', '')
+        utm_content = body.get('utm_content', '')
+        
         # Получение источника перехода и времени
         headers = event.get('headers', {})
         referer = headers.get('referer', headers.get('Referer', 'Прямой переход'))
@@ -116,6 +123,17 @@ def handler(event: dict, context) -> dict:
                         <p><strong>Источник перехода:</strong> {referer}</p>
                         <p><strong>IP адрес:</strong> {source_ip}</p>
                         <p style="font-size: 11px; color: #999; margin-top: 10px;"><strong>User Agent:</strong> {user_agent}</p>
+                        
+                        <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 20px 0;">
+                        <h3 style="color: #2d6a4f; margin-bottom: 15px;">📊 UTM-метки рекламной кампании</h3>
+                        <div style="background: #f0f9f4; padding: 15px; border-radius: 5px;">
+                            {('<p><strong>Источник (utm_source):</strong> ' + utm_source + '</p>') if utm_source else ''}
+                            {('<p><strong>Канал (utm_medium):</strong> ' + utm_medium + '</p>') if utm_medium else ''}
+                            {('<p><strong>Кампания (utm_campaign):</strong> ' + utm_campaign + '</p>') if utm_campaign else ''}
+                            {('<p><strong>Ключевое слово (utm_term):</strong> ' + utm_term + '</p>') if utm_term else ''}
+                            {('<p><strong>Содержание (utm_content):</strong> ' + utm_content + '</p>') if utm_content else ''}
+                            {('<p style="color: #999; font-style: italic; margin-top: 10px;">UTM-метки не обнаружены</p>') if not any([utm_source, utm_medium, utm_campaign, utm_term, utm_content]) else ''}
+                        </div>
                     </div>
                 </div>
             </body>

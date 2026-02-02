@@ -28,13 +28,31 @@ const ContactAndFooter = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    // Получение UTM-меток из URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmData = {
+      utm_source: urlParams.get('utm_source') || undefined,
+      utm_medium: urlParams.get('utm_medium') || undefined,
+      utm_campaign: urlParams.get('utm_campaign') || undefined,
+      utm_term: urlParams.get('utm_term') || undefined,
+      utm_content: urlParams.get('utm_content') || undefined,
+    };
+
+    // Убираем undefined значения
+    const filteredUtmData = Object.fromEntries(
+      Object.entries(utmData).filter(([_, v]) => v !== undefined)
+    );
+
     try {
       const response = await fetch('https://functions.poehali.dev/a732bd0b-978a-4cf6-86d7-0b39c86f16e2', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          ...filteredUtmData,
+        }),
       });
 
       const data = await response.json();
