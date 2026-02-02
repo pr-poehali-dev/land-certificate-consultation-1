@@ -37,6 +37,13 @@ def handler(event: dict, context) -> dict:
         phone = body.get('phone', '')
         message = body.get('message', '')
         
+        # Получение источника перехода и времени
+        headers = event.get('headers', {})
+        referer = headers.get('referer', headers.get('Referer', 'Прямой переход'))
+        user_agent = headers.get('user-agent', headers.get('User-Agent', 'Неизвестно'))
+        source_ip = event.get('requestContext', {}).get('identity', {}).get('sourceIp', 'Неизвестно')
+        received_time = datetime.now()
+        
         if not name or not phone:
             return {
                 'statusCode': 400,
@@ -95,12 +102,20 @@ def handler(event: dict, context) -> dict:
                 <div style="max-width: 600px; margin: 0 auto; padding: 20px; background: #f9f9f9; border-radius: 8px;">
                     <h2 style="color: #2d6a4f; border-bottom: 2px solid #2d6a4f; padding-bottom: 10px;">Новая заявка с сайта</h2>
                     <div style="background: white; padding: 20px; border-radius: 5px; margin: 20px 0;">
+                        <h3 style="color: #2d6a4f; margin-bottom: 15px;">Контактная информация</h3>
                         <p><strong>Номер заявки:</strong> #{application_id}</p>
                         <p><strong>Имя:</strong> {name}</p>
                         <p><strong>Телефон:</strong> {phone}</p>
                         <p><strong>Сообщение:</strong></p>
                         <p style="background: #f5f5f5; padding: 15px; border-left: 3px solid #2d6a4f;">{message if message else '<em>Не указано</em>'}</p>
-                        <p style="color: #666; font-size: 12px; margin-top: 20px;">Дата: {datetime.now().strftime('%d.%m.%Y %H:%M')}</p>
+                        
+                        <hr style="border: none; border-top: 1px solid #e5e5e5; margin: 20px 0;">
+                        
+                        <h3 style="color: #2d6a4f; margin-bottom: 15px;">Дополнительная информация</h3>
+                        <p><strong>Время получения:</strong> {received_time.strftime('%d.%m.%Y в %H:%M:%S')}</p>
+                        <p><strong>Источник перехода:</strong> {referer}</p>
+                        <p><strong>IP адрес:</strong> {source_ip}</p>
+                        <p style="font-size: 11px; color: #999; margin-top: 10px;"><strong>User Agent:</strong> {user_agent}</p>
                     </div>
                 </div>
             </body>
